@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+*,*::before,*::after{  /*全部區域*/
+    box-sizing: border-box;
+    border-spacing: 0;
+}
+img {  /*圖片防破版*/
+  max-width: 100%;
+  height: auto;
+}
+a{  /*全部連結去底線*/
+   text-decoration: none;
+}
+body{
+    font-family: 'Nunito';
+    letter-spacing: .04em;
+    line-height: 1.5;
+}
+.innweWrap{  
+  max-width: 1000px;  /*本次作業電腦設定寬度*/
+  margin: 0 auto;
+  overflow-x:hidden; /* 不可水平滾動 */
+  overflow-y: auto;  /* 允許垂直滾動 */
+}
+.snsBar{
+    background: #FAF9F9;
+}
+.sns {
+    display: block;
+    display: flex;
+    justify-content: flex-end;
+    padding: 3px 12px 8px;
+}
+.sns a{
+    color:#4267B2;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    vertical-align: bottom;
+}
+.sns .tw{
+    border-left: 2px solid  #ECECEC  /* 推特左邊 */
+}
+.sns .tw a{
+    color: #1DA1F2; 
+}
+.sns img{
+    vertical-align: bottom;
+    padding: 3px;
+}
+.sns a:hover{
+    cursor: pointer;
+    filter:brightness(135%);
+}
+.navBar{
+    padding: 0 15px;
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-between;
+    box-shadow: 0px 3px 6px 0px rgba(76, 71, 67, 0.1), 0px 12px 12px 0px rgba(76, 71, 67, 0.05), 0px 20px 12px 0px rgba(76, 71, 67, 0.03), 0px 45px 15px 0px rgba(76, 71, 67, 0.01), 0px 30px 12px 0px rgba(76, 71, 67, 0.00);
+}
+h1{
+    margin: 20px 5px;
+}
+.navBar h1{ 
+    display: flex;
+    text-indent: -9999px; /*把字推出去出*/
+    background-image: url('https://kkmintaddict.github.io/jQ/hex-jQuery-hk/images/hexschool-logo.svg');  /*背景圖*/
+    background-position: left center;
+    background-size: cover;
+    width: 150.061px; /*原圖寬度*/
+    height: 36px; /*原圖高度*/
+}
+.menuBtn{
+    display: inline-flex;
+    align-items: center;
+}
+.menuBtn li a{
+    color: #555;
+    font-weight: 600;
+    padding: 22px 15px;
+    display: inline-block;
+}
+.menuBtn li a:hover{
+    cursor: pointer;
+    color: #5956E8; 
+    transition: all 0.3s;
+}
+.menuBtn li:hover, .menuBtn li:active{
+    border-bottom: 4px solid #5956E8;
+    transform: translateY(2px);
+    transition: all 0.1s;
+}
+.productList{
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 10px;  
+}
+.productList li{
+    max-width: 31.5%;
+    border-radius: 7px;
+    background: #FFF;
+    box-shadow: 0px 2px 4px 0px rgba(146, 146, 146, 0.25);
+}
+h2{
+    color: #292930;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+h3{
+    color: #5956E8;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0 40px;
+}
+.productList p{
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 20px 0px 50px;
+    width: 70%;
+    border-top: 2px solid  #ECECEC;
+    margin: 0 auto;
+}
+.snsBarFoot{
+    display: none;
+}
+
+/*平板直 768 1024 */
+@media (max-width:768px) { /*平板導覽2*2 下方單欄*/
+    .snsBar{
+        display: none;
+    }
+    .navBar{
+        display: block;
+        text-align: center;
+        padding:  30px 0px 10px;
+    }
+    h1{
+        margin:0 auto;
+    }
+    .menuBtn{
+        display: grid;
+        justify-content: center;
+        margin-top: 30px;
+        grid-template-columns: 160px 160px;
+        grid-template-rows:60px 60px;
+    }
+    .menuBtn li:hover, .menuBtn li:active{
+        border-bottom: transparent;
+    }
+    .item01 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .item02 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .item03 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    .item04 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    .menuBtn li a{
+        padding: 10px;
+    }
+    .productList{
+        display: flex;
+        flex-direction: column;
+        margin: 60px auto 20px;        
+    }
+    .productList li{
+        max-width: 60%;
+        margin: 20px auto;
+    }
+    .snsBarFoot{
+        display: block;
+        background: #FAF9F9;
+        padding: 4px; 
+    }
+    .snsBarFoot .sns{
+        margin: 10 auto;
+        justify-content: center;
+    }  
+}
+
+@media (max-width:569px) { /*手機*/
+    .snsBar{
+        display: none;
+    }
+    .logo{
+        margin-bottom: 20px;
+    }
+    .menuBtn{
+        display: inline;
+    }
+    .menuBtn li a{
+        padding: 12px;
+        font-size: 14px;
+    }
+   
+    .productList{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin: 30px auto 10px;
+        align-items: center;        
+    }
+    .productList li{
+        max-width: 78%;
+        margin: 10px auto;
+    }
+    h3{
+        font-size: 12px;
+        padding: 10px 0 32px;
+    }
+    .productList p{
+        width: 82%;
+        font-size:  14px;
+        padding: 8px 0 32px;
+        border-top: 1px solid  #ECECEC;
+    }
+
+}
