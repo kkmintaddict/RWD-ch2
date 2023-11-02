@@ -12,7 +12,7 @@ a{  /*全部連結去底線*/
    text-decoration: none;
 }
 body{
-    font-family: 'Nunito';
+    font-family: 'Nunito', sans-serif;
     letter-spacing: .04em;
     line-height: 1.5;
 }
@@ -26,7 +26,6 @@ body{
     background: #FAF9F9;
 }
 .sns {
-    display: block;
     display: flex;
     justify-content: flex-end;
     padding: 3px 12px 8px;
@@ -59,17 +58,19 @@ body{
     justify-content: space-between;
     box-shadow: 0px 3px 6px 0px rgba(76, 71, 67, 0.1), 0px 12px 12px 0px rgba(76, 71, 67, 0.05), 0px 20px 12px 0px rgba(76, 71, 67, 0.03), 0px 45px 15px 0px rgba(76, 71, 67, 0.01), 0px 30px 12px 0px rgba(76, 71, 67, 0.00);
 }
-h1{
-    margin: 20px 5px;
+.logo{
+    align-self: center;
 }
 .navBar h1{ 
+    font-size: 24px;
     display: flex;
-    text-indent: -9999px; /*把字推出去出*/
+    text-indent: 101%;   /* 文字縮排，利用百分比值讓文字超過容器寬度，使其隱藏在容器外。 */
+    overflow: hidden;    /* 超出部分隱藏，容器尺寸外的文字將被隱藏。 */
+    white-space: nowrap; /* 禁用自動換行，文字將在同一行内顯示，不會自動換行。 */
     background-image: url('https://kkmintaddict.github.io/jQ/hex-jQuery-hk/images/hexschool-logo.svg');  /*背景圖*/
     background-position: left center;
-    background-size: cover;
-    width: 150.061px; /*原圖寬度*/
-    height: 36px; /*原圖高度*/
+    background-size: contain;
+    background-repeat: no-repeat;  
 }
 .menuBtn{
     display: inline-flex;
@@ -139,8 +140,10 @@ h3{
         text-align: center;
         padding:  30px 0px 10px;
     }
-    h1{
-        margin:0 auto;
+    .navBar h1{
+        display: block;
+        text-align: center;
+        background-position: center center;
     }
     .menuBtn{
         display: grid;
@@ -192,9 +195,6 @@ h3{
 }
 
 @media (max-width:569px) { /*手機*/
-    .snsBar{
-        display: none;
-    }
     .logo{
         margin-bottom: 20px;
     }
@@ -205,10 +205,7 @@ h3{
         padding: 12px;
         font-size: 14px;
     }
-   
     .productList{
-        display: flex;
-        flex-direction: column;
         padding: 20px;
         margin: 30px auto 10px;
         align-items: center;        
