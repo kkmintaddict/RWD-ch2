@@ -52,7 +52,7 @@ body{
     filter:brightness(135%);
 }
 .navBar{
-    padding: 0 15px;
+    padding: 0px 15px;
     display: flex;
     vertical-align: middle;
     justify-content: space-between;
@@ -62,7 +62,7 @@ body{
     align-self: center;
 }
 .navBar h1{ 
-    font-size: 24px;
+    font-size: 28px;
     display: flex;
     text-indent: 101%;   /* 文字縮排，利用百分比值讓文字超過容器寬度，使其隱藏在容器外。 */
     overflow: hidden;    /* 超出部分隱藏，容器尺寸外的文字將被隱藏。 */
@@ -74,22 +74,26 @@ body{
 }
 .menuBtn{
     display: inline-flex;
-    align-items: center;
+    align-items:center;
 }
 .menuBtn li a{
     color: #555;
     font-weight: 600;
-    padding: 22px 15px;
+    padding: 20px 15px;
     display: inline-block;
 }
 .menuBtn li a:hover{
     cursor: pointer;
-    color: #5956E8; 
+    color: #5956E8;
+    transform: translateY(2px); 
     transition: all 0.3s;
 }
+.menuBtn>li{
+    padding: 6px 0px;  /*底線切邊*/
+}
 .menuBtn li:hover, .menuBtn li:active{
-    border-bottom: 4px solid #5956E8;
-    transform: translateY(2px);
+    padding-bottom: 2px;
+    border-bottom: 4px solid #5956E8; /*底線特效不要連a*/
     transition: all 0.1s;
 }
 .productList{
@@ -129,7 +133,6 @@ h3{
 .snsBarFoot{
     display: none;
 }
-
 /*平板直 768 1024 */
 @media (max-width:768px) { /*平板導覽2*2 下方單欄*/
     .snsBar{
@@ -172,7 +175,7 @@ h3{
         grid-row: 2 / 3;
     }
     .menuBtn li a{
-        padding: 10px;
+        padding: 20px 30px;
     }
     .productList{
         display: flex;
@@ -193,7 +196,6 @@ h3{
         justify-content: center;
     }  
 }
-
 @media (max-width:569px) { /*手機*/
     .logo{
         margin-bottom: 20px;
@@ -202,17 +204,15 @@ h3{
         display: inline;
     }
     .menuBtn li a{
-        padding: 12px;
         font-size: 14px;
+        display: block;
     }
     .productList{
-        padding: 20px;
-        margin: 30px auto 10px;
-        align-items: center;        
+        padding: 20px;     
     }
     .productList li{
         max-width: 78%;
-        margin: 10px auto;
+        margin: 15px auto;
     }
     h3{
         font-size: 12px;
@@ -224,5 +224,4 @@ h3{
         padding: 8px 0 32px;
         border-top: 1px solid  #ECECEC;
     }
-
 }
